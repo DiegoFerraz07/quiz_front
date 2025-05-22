@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import * as colors from '../config/colors';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   * {
@@ -12,9 +13,14 @@ export default createGlobalStyle`
   h1 {
     color: ${colors.primaryColorDark};
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 40px;
     margin-bottom: 20px;
     font-weight: bold;
+  }
+
+  h2 {
+    color: ${colors.primaryColorDark};
+    font-size: 30px;
   }
 
   button {
@@ -34,6 +40,39 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${colors.primaryColor};
+    transition: all 300ms;
+  }
+
+  a:hover {
+    filter: brightness(80%);
+  }
+
+  body .Toastify .Toastify__toast-container .Toastify__toast--success{
+    background: ${colors.success};
+    color: #fff;
+  }
+
+  body .Toastify .Toastify__toast-container .Toastify__toast--warning{
+    background: ${colors.warning};
+    color: #fff;
+  }
+
+  body .Toastify .Toastify__toast-container .Toastify__toast--error{
+    background: ${colors.error};
+    color: #fff;
+  }
+
+  .Toastify__toast-icon svg {
+    fill: #fff;
+
+  }
+  .Toastify__progress-bar {
+  background: white !important;
   }
 
 `;
