@@ -1,6 +1,8 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import * as colors from '../config/colors';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-form-wizard-component/dist/style.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default createGlobalStyle`
   * {
@@ -75,6 +77,18 @@ export default createGlobalStyle`
   background: white !important;
   }
 
+.wizard-nav {
+  display: flex; /* Ativa o Flexbox para alinhamento flexível */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 30px; /* Espaçamento entre os itens */
+}
+
+.wizard-nav-item {
+  flex: 0 0 calc((100% - 120px) / 5);
+  max-width: calc((100% - 120px) / 5);
+  text-align: center;
+}
 `;
 
 export const Container = styled.div`

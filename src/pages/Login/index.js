@@ -20,12 +20,11 @@ export default function Login() {
 
     const credentials = { email, password, role };
 
-    const { success, token } = await dispatch(loginUser(credentials));
-
+    const { success, token, userName } = await dispatch(loginUser(credentials));
     if (success && token) {
       const from = location.state?.from?.pathname || '/dashboard';
       navigate(from, { replace: true });
-      toast.success(`Olá ${role}, login realizado com sucesso, Ben-vindo.`);
+      toast.success(`Olá ${userName}, login realizado com sucesso, Ben-vindo.`);
     } else {
       toast.error('Erro ao logar');
     }

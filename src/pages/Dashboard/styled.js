@@ -1,36 +1,31 @@
 import styled from 'styled-components';
-import * as colors from '../../config/colors';
 
-export const Form = styled.form`
-  margin-top: 20px;
+export const CardContainer = styled.div`
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 580px;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+`;
 
-  input {
-    margin-bottom: 20px;
-    height: 40px;
-    padding: 0 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+export const Card = styled.div`
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  width: 580px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 300ms;
 
-    &:focus {
-      border: 1px solid ${colors.primaryColor};
-    }
-  }
-
-  label {
-    font-size: 16px;
-    font-weight: 700;
-    color: ${colors.primaryColorDark};
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  input[type='radio'] {
-    display: flex;
-    gap: 10px;
-    width: 16px;
-    height: 16px;
-    margin: 0;
+  &:hover {
+    filter: brightness(90%);
   }
 `;

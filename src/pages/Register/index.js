@@ -105,7 +105,7 @@ export default function Register() {
                 onChange={e => setRole(e.target.value)}
                 value="Estudante"
               />
-              Estudante:
+              Estudante
             </label>
             <label>
               <input

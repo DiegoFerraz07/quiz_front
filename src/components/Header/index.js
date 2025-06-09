@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   FaHome,
+  FaMedal,
   FaSignInAlt,
   FaSignOutAlt,
+  FaThLarge,
   FaUserCircle,
   FaUserPlus,
 } from 'react-icons/fa';
@@ -32,6 +34,10 @@ export default function Header() {
         <FaHome size={24} />
         Home
       </Link>
+      <Link to="/ranking">
+        <FaMedal size={24} />
+        Ranking
+      </Link>
       {!isLoggedIn ? (
         <>
           <Link to="/register">
@@ -45,6 +51,10 @@ export default function Header() {
         </>
       ) : (
         <>
+          <Link to="/dashboard">
+            <FaThLarge size={24} />
+            Painel
+          </Link>
           <Link to="/register">
             <FaUserCircle size={24} />
             Perfil

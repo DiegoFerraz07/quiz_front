@@ -4,9 +4,10 @@ import { login, logout } from '../slices/userSlice';
 export const loginUser = credencials => async dispatch => {
   try {
     const response = await axios.post('/tokens', credencials);
-    const { token, id, name, lastName, email, role } = response.data;
+    const { user, token } = response.data;
+    const { id, name, lastName, email, role } = user;
     dispatch(login({ user: { id, name, lastName, email, role }, token }));
-    return { success: true, token };
+    return { success: true, token, userName: user.name };
   } catch (error) {
     console.log('Erro ao fazer login', error);
     return {
@@ -23,7 +24,8 @@ export const fetchUserProfile = () => async (dispatch, getState) => {
     const response = await axios.get('/tokens/me', {
       headers: { Authorization: `Bearer ${token}` },
     });
-    const { id, name, lastName, email, role } = response.data;
+    const { user } = response.data;
+    const { id, name, lastName, email, role } = user;
     dispatch(login({ user: { id, name, lastName, email, role }, token }));
     return { success: true, token };
   } catch (error) {
